@@ -1,0 +1,57 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(#bdee7d , #042e09);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    margin: 50px;
+    height: 400px ;
+    width: 300px;
+    position: relative;
+}
+
+.bg {
+ position: absolute;
+background-image: url(bg.jpg);
+height: 100% ; 
+width: 100%;
+background-size: cover;
+transition-duration: 1s;
+}
+
+.box:hover .bg {
+    transform: perspective(20px) rotatex(2deg) translatey(-50px);
+}
+
+.bird {
+    position: absolute;
+width: 300px;
+height: 300px;
+background-size: 100%;
+background-repeat: no-repeat;
+animation-name: gifAnimation;
+animation-duration: 0.2s;
+bottom: 0;
+transition-duration: 1s;
+animation-iteration-count: infinite;
+animation-play-state: paused;
+}
+
+.box:hover .bird {
+    transform: translateY(-200px) translateX(-5px);
+    animation-play-state: running;
+}
+
+@keyframes gifAnimation {
+    from {
+        background-image: url(img22.png)
+    }
+
+    to{
+        background-image: url(img21.png);
+    }
+
+}
